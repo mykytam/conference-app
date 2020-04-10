@@ -1,9 +1,12 @@
 package com.pluralsight.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "sessions") // name of database table
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) // ignoring
 public class Session {
     // not camelCase, spelling here like db columns
     @Id //specify which attribute is the primary key

@@ -1,11 +1,14 @@
 package com.pluralsight.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "speakers") // name of database table
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) // ignoring
 public class Speaker {
     // not camelCase, spelling here like db columns
     @Id //specify which attribute is the primary key
@@ -23,6 +26,7 @@ public class Speaker {
     private byte[] speaker_photo; // byte array
 
     @ManyToMany(mappedBy = "speakers") // other side of the existing ManyToMany relationship
+    @JsonIgnore
     private List<Session> sessions;
 
     public Speaker() {}
