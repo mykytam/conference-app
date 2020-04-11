@@ -13,13 +13,13 @@ public class Speaker {
     // not camelCase, spelling here like db columns
     @Id //specify which attribute is the primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) // specifies how the primary key field get populated on a new INSERT
-    private Long speaker_id;
+    private Long speakerId;
 
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     private String title;
     private String company;
-    private String speaker_bio;
+    private String speakerBio;
 
     @Lob // large object
     @Type(type = "org.hibernate.type.BinaryType") // help hibernate dealing with binary data
@@ -47,28 +47,28 @@ public class Speaker {
         this.sessions = sessions;
     }
 
-    public Long getSpeaker_id() {
-        return speaker_id;
+    public Long getSpeakerId() {
+        return speakerId;
     }
 
-    public void setSpeaker_id(Long speaker_id) {
-        this.speaker_id = speaker_id;
+    public void setSpeakerId(Long speaker_id) {
+        this.speakerId = speaker_id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String first_name) {
+        this.firstName = first_name;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String last_name) {
+        this.lastName = last_name;
     }
 
     public String getTitle() {
@@ -87,11 +87,11 @@ public class Speaker {
         this.company = company;
     }
 
-    public String getSpeaker_bio() {
-        return speaker_bio;
+    public String getSpeakerBio() {
+        return speakerBio;
     }
 
-    public void setSpeaker_bio(String speaker_bio) {
-        this.speaker_bio = speaker_bio;
+    public void setSpeakerBio(String speaker_bio) {
+        this.speakerBio = speaker_bio;
     }
 }
